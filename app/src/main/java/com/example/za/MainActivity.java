@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToPvPActivity(View view) {
         Intent intent = new Intent(this, PvPActivity.class);
-        Log.d("intent","intent" +intent);
         startActivity(intent);
     }
 

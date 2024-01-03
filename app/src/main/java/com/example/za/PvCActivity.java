@@ -23,9 +23,9 @@ public class PvCActivity extends AppCompatActivity {
     private boolean[][] isFieldOccupied = new boolean[3][3];
     private char selectedPlayer = 'X';
 
-    private boolean isPlayerXHuman = true; // Czy gracz X jest człowiekiem
-    private boolean isPlayerOHuman = false; // Czy gracz O jest człowiekiem
-    private boolean isPlayerOTurn = false; // Czyja kolej na ruch - początkowo ustawione na gracza X
+    private boolean isPlayerXHuman = true;
+    private boolean isPlayerOHuman = false;
+    private boolean isPlayerOTurn = false;
 
 
     @Override
@@ -168,9 +168,6 @@ public class PvCActivity extends AppCompatActivity {
                     updatePlayerTurnLabel();
                     isPlayerXHuman = false;
                     if (!isPlayerXHuman){
-                        // Tutaj dodaj kod, aby komputer wykonał ruch
-                        Log.d("dsa","sda");
-
                         makeComputerMove();
                     }
                     updateButtons();
@@ -179,7 +176,6 @@ public class PvCActivity extends AppCompatActivity {
         }
     }
     private void makeComputerMove() {
-        // Szukaj dostępnych pustych pól
         int availableMoves = 0;
         int[] availableRows = new int[9];
         int[] availableCols = new int[9];
@@ -195,17 +191,14 @@ public class PvCActivity extends AppCompatActivity {
         }
 
         if (availableMoves > 0) {
-            // Wybierz losowe dostępne pole
             Random random = new Random();
             int randomIndex = random.nextInt(availableMoves);
             int row = availableRows[randomIndex];
             int col = availableCols[randomIndex];
 
-            // Oznacz pole jako zajęte przez komputer
             isFieldOccupied[row][col] = true;
             board[row][col] = currentPlayer;
 
-            // Sprawdź warunki wygranej lub remisu
             if (checkForWinner()) {
                 gameOver = true;
                 displayWinner();
@@ -215,7 +208,6 @@ public class PvCActivity extends AppCompatActivity {
                 displayDraw();
                 updateButtons();
             } else {
-                // Przełącz gracza i zaktualizuj etykietę
                 togglePlayer();
                 updatePlayerTurnLabel();
             }
