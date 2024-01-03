@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="#dcdcdc">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kółko i Krzyżyk"
+            android:textSize="32sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp"
+            android:textColor="#333333" />
+
+        <Button
+            android:id="@+id/computerButton"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/soloButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="#e74c3c"
+            android:onClick="goToPvCActivity"
+            android:text="Zagraj z Komputerem"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/soloButton"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/titleTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="107dp"
+            android:background="#3498db"
+            android:onClick="goToPvPActivity"
+            android:text="Zagraj Solo"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
